@@ -1,12 +1,22 @@
-{% block body %}
-    <h1>ぴゅる語翻訳機</h1>
-    <h2>説明</h2>
-    <p>日本語からぴゅる語に翻訳する翻訳機です。これであなたもぴゅる語マスター</p>
+<!doctype html>
+<html lang="ja">
+<head>
+    {% load static %}
+    <title>ぴゅる語サイト:日本語入力フォーム</title>
+    <link rel="stylesheet" href="{% static 'sytle.css' %}">
+</head>
 
-    {{ message }}</br>
-    <form action="{% url 'pyuru_lang:result' %}" method="post">
-        {% csrf_token %}</br>
-        {{ form }}</br>
-        <input type="submit" value="送信">
-    </form>
-{% endblock %}
+<body>
+    {% block body %}
+        <h1>ぴゅる語翻訳機</h1>
+        <h2>説明</h2>
+        <p>日本語からぴゅる語に翻訳する翻訳機です。これであなたもぴゅる語マスター</p>
+        {{ message }}</br>
+        <form action="{% url 'pyuru_lang:result' %}" method="post">
+            {% csrf_token %}</br>
+            {{ form }}</br>
+            <input type="submit" value="送信">
+        </form>
+    {% endblock %}
+</body>
+

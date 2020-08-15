@@ -1,7 +1,18 @@
-<h1>ここに結果を表示する</h1>
-<p>別のサイト</p>
-<form action="{% url 'pyuru_lang:input' %}" method="get">
-    {{ message }}
-</form>
 
-<a href="{% url 'pyuru_lang:input'%}">もう一度ぴゅる語に翻訳する？</a>
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'sytle.css' %}">
+</head>
+
+<body>
+    <h1>ぴゅる語 翻訳結果</h1>
+    <h2>翻訳すると......</h2>
+    <form action="{% url 'pyuru_lang:input' %}" method="get">
+        <h2>「{{ message }}」</h2>
+        <p>は</p>
+        <h2>「{{translation_message}}」</h2>
+        <p>となります</p>
+    </form>
+
+    <a href="{% url 'pyuru_lang:input'%}">もう一度ぴゅる語に翻訳する？</a>
+</body>

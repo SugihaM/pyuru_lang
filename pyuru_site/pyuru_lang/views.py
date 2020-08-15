@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.urls import reverse
 
-from . import forms
+from . import forms, pyuru_kai
 
 # Create your views here.
 def index(request):
@@ -23,9 +23,14 @@ def input_text(request):
     return render(request, 'pyuru_lang/input_text.html', d)
 
 def result(request):
+    p = pyuru_kai.Pyuru_Lang_Translation()
     string = request.POST['your_name']
-    print(string)
+    translation_string = p.pyuru_lang_translation(string)
+
     d = {
-        'message': string,
+        'label': 'ぴゅる語翻訳結果',
+        'message':string,
+        'translation_message':translation_string,
     }
+
     return render(request, 'pyuru_lang/result.html', d)

@@ -1,3 +1,11 @@
-<h1>これが表示されたということは</h1>
-<p>神</p>
-<a href="{% url 'pyuru_lang:input'%}">もう一度ぴゅる語に翻訳する？</a>
+
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <h1>ぴゅる語翻訳サイト</h1>
+    <p>日本語からぴゅる語に対応づけることができるサイトとなっています</p>
+    <a href="{% url 'pyuru_lang:input'%}">早速ぴゅる語に翻訳する？</a>
+</body>
