@@ -4,7 +4,7 @@
     <p>日本語からぴゅる語に翻訳する翻訳機です。これであなたもぴゅる語マスター</p>
 
     {{ message }}</br>
-    <form action="{% url 'pyuru_lang:index' %}" method="post">
+    <form action="{% url 'pyuru_lang:result' %}" method="post">
         {% csrf_token %}</br>
         {{ form }}</br>
         <input type="submit" value="送信">

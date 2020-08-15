@@ -21,3 +21,11 @@ def input_text(request):
     }
 
     return render(request, 'pyuru_lang/input_text.html', d)
+
+def result(request):
+    string = request.POST['your_name']
+    print(string)
+    d = {
+        'message': string,
+    }
+    return render(request, 'pyuru_lang/result.html', d)
